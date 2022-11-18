@@ -66,7 +66,7 @@ function atenderPaciente() {
 
     item += '<li class="list-group-item d-flex justify-content-between lh-condensed">'
     item += '    <div>'
-    item += '        <h6 class="my-0">' + atender + '</h6>'
+    item += '        <h6 class="my-0 text-success">' + atender + '</h6>'
     item += '    </div>'
     item += '</li>'
 
@@ -113,11 +113,15 @@ function urgencia() {
     pacientes.unshift(nomePaciente)
 
     var lista = ''
+    var marcacao = ''
 
     for (var n = 0; n < pacientes.length; n++) {
+
+        marcacao = (pacientes[n] == nomePaciente) ? 'text-warning' : ''
+
         lista += '<li class="list-group-item d-flex justify-content-between lh-condensed">'
         lista += '    <div>'
-        lista += '        <h6 class="my-0">' + (n + 1) + '. ' + pacientes[n] + '</h6>'
+        lista += '        <h6 class="my-0 ' + marcacao + '">' + (n + 1) + '. ' + pacientes[n] + '</h6>'
         lista += '    </div>'
         lista += '</li>'
     }
